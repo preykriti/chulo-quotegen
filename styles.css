@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding:0;
+}
+nav{
+    background-color: rgb(90, 109, 56);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 22px;
+}
+
+.display-quote{
+    border: 3px solid rgb(90, 109, 56);
+    height: 12rem;
+    width: 40rem;
+    padding: 22px;
+    margin: auto;
+}
