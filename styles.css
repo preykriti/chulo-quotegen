@@ -14,14 +14,18 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding: 16px 3rem;
-    
+    margin: 8px 14px;
+    border-radius: 5px;
+    border: 2px solid #60775d;  
+    box-shadow: 6px 6px 0px #60775d;  
 }
 
 nav h3{
     font-family: "Special Elite";
     font-size: xx-large;
     font-weight:normal;
-   
+    padding: 0;
+    margin: 0;
 }
 
 .container{
@@ -32,17 +36,28 @@ nav h3{
     display: flex;
     justify-content: space-between;
 }
+
+.font-size-control{
+    background-color: #f1e8c7;
+    border: 2px solid #7e7b59;
+}
 .font-size-control button{
-    
     height: 2rem;
     width: 2rem;
-
+    
 }
 
 .quote-section{
-    border: 1px solid rgb(90, 109, 56);
-    border-radius: 10px;
-    height: 12rem;
+    
+   
+}
+
+.quote-display{
+    border: 3px solid #8a925a;
+    border-radius: 6px;
+    border-style: dashed;
+    height: fit-content;
+    min-height: 13rem;
     width: 40rem;
     padding: 22px;
     margin: auto;
@@ -52,11 +67,14 @@ nav h3{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-size: 16px;
 }
 
-#quote-text{
-    font-size: larger;
+#quote-text{ 
     margin-bottom: 4rem;
+}
+#quote-author{
+    font-size: 11px;
 }
 
 #quote-author::before{
