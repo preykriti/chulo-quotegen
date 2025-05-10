@@ -14,6 +14,7 @@ let i = 0;
 let chosenQuotes = [];
 let chosenSize = 16;
 
+
 function changeFontSize(type) {
   chosenSize = type === "increment" ? chosenSize + 2 : chosenSize - 2;
   quoteText.style.fontSize = `${chosenSize}px`;
@@ -33,10 +34,10 @@ decreaseFont.addEventListener("click", () => {
   }
 });
 
+
+//for quotes
 function updateQuotes() {
   const chosenCategory = category.value;
-  console.log(chosenCategory);
-
   chosenQuotes = quotes.filter((quote) => quote.category === chosenCategory);
   displayQuote();
 }
@@ -48,4 +49,25 @@ function displayQuote() {
 }
 
 category.addEventListener("change", updateQuotes);
+
+nextBtn.addEventListener("click", ()=>{
+  if(chosenQuotes.length >0){
+    i = (i+1)% chosenQuotes.length;
+    displayQuote();
+  }
+});
+
+previousBtn.addEventListener("click", ()=>{
+  if(chosenQuotes.length > 0 ){
+    i = (i-1 + chosenQuotes.length)% chosenQuotes.length;
+    displayQuote();
+  }
+});
+
+randomBtn.addEventListener("click", ()=>{
+  i = Math.floor(Math.random() * (chosenQuotes.length));
+  console.log("helo"+ i);
+  displayQuote();
+  }
+)
 updateQuotes();

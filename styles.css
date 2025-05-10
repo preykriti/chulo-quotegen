@@ -2,6 +2,12 @@
     margin: 0;
     padding:0;
 }
+:root{
+    --navColor:  #8a925a;
+    --bgColor: #f1e8c7;
+    --shadowColor: #60775d;
+    --quoteSectionColor: #fcf5dc;
+}
 body{
     background-color: #f1e8c7;
     font-family: "Montserrat";
@@ -26,6 +32,7 @@ nav h3{
     font-weight:normal;
     padding: 0;
     margin: 0;
+    text-shadow: 2px 2px 0px var(--shadowColor);
 }
 
 .container{
@@ -38,18 +45,29 @@ nav h3{
 }
 
 .font-size-control{
-    background-color: #f1e8c7;
-    border: 2px solid #7e7b59;
+    
+    border: 2px solid var(--shadowColor);
+    border-radius: 5px;
+    /* box-shadow: 6px 6px 0px var(--shadowColor); */
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 10rem;
 }
 .font-size-control button{
     height: 2rem;
     width: 2rem;
-    
+    border-radius: 50%;
+    border: 1px solid var(--shadowColor);
+
 }
 
 .quote-section{
-    
    
+    display: flex;
+
 }
 
 .quote-display{
@@ -88,7 +106,7 @@ nav h3{
 }
 
 .buttons button{
-    padding: 8px 20px;
+    padding: 16px;
     background-color: #8a925a;
     border: 1px ;
     border-radius: 2px;
