@@ -1,4 +1,4 @@
-import {quotes} from "./data.js"
+import { quotes } from "./data.js";
 
 const quoteText = document.getElementById("quote-text");
 const quoteAuthor = document.getElementById("quote-author");
@@ -14,38 +14,37 @@ let i = 0;
 let chosenQuotes = [];
 let chosenSize = 16;
 
-increaseFont.addEventListener("click", ()=>{
-  if(chosenSize <52){
-    chosenSize = chosenSize + 2;
-    quoteText.style.fontSize = `${chosenSize}px`;
-    quoteAuthor.style.fontSize = `${chosenSize-5}px`;
-    displayFont.textContent = `${chosenSize}px`;
+function changeFontSize(type) {
+  chosenSize = type === "increment" ? chosenSize + 2 : chosenSize - 2;
+  quoteText.style.fontSize = `${chosenSize}px`;
+  quoteAuthor.style.fontSize = `${chosenSize - 5}px`;
+  displayFont.textContent = `${chosenSize}px`;
+}
+
+increaseFont.addEventListener("click", () => {
+  if (chosenSize < 52) {
+    changeFontSize("increment");
   }
 });
 
-decreaseFont.addEventListener("click", ()=>{
+decreaseFont.addEventListener("click", () => {
   if (chosenSize > 16) {
-    chosenSize = chosenSize - 2;
-    quoteText.style.fontSize = `${chosenSize}px`;
-    quoteAuthor.style.fontSize = `${chosenSize - 5}px`;
-    displayFont.textContent = `${chosenSize}px`;
+    changeFontSize("decrement");
   }
-})
+});
 
-function updateQuotes(){
-    const chosenCategory = category.value;
-    console.log(chosenCategory);
+function updateQuotes() {
+  const chosenCategory = category.value;
+  console.log(chosenCategory);
 
-    chosenQuotes  = quotes.filter(quote => (quote.category === chosenCategory));
-    displayQuote();
+  chosenQuotes = quotes.filter((quote) => quote.category === chosenCategory);
+  displayQuote();
 }
- 
 
-function displayQuote(){
-    
-    const selectedQuote = chosenQuotes[i];
-    quoteText.textContent = selectedQuote.quote;
-    quoteAuthor.textContent = selectedQuote.author;
+function displayQuote() {
+  const selectedQuote = chosenQuotes[i];
+  quoteText.textContent = selectedQuote.quote;
+  quoteAuthor.textContent = selectedQuote.author;
 }
 
 category.addEventListener("change", updateQuotes);
