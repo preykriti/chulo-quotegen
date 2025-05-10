@@ -1,35 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quote Generator</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <nav>
-        <h2>QUOTE-GENERATOR</h2>
-        <div>Dark Mode</div>
+      <h3 class="logo">QUOTES</h3>
+      <div>Dark Mode</div>
     </nav>
 
-    <div class="categories">
-        <h3>Choose category</h3>
+    <div class="container">
+    <div class="top-bar">
+      <div class="categories">
+        <h3>Categories</h3>
         <select id="category" name="category">
-            <option value="motivational">Motivational</option>
-            <option value="love">Love</option>
-            <option value="food">Food</option>
+          <option value="motivational">Motivational</option>
+          <option value="love">Love</option>
+          <option value="food">Food</option>
         </select>
+      </div>
+      <div class="font-size-control">
+        <button id = "decrease-font">-</button>
+        <span id="font-size-display">12px</span>
+        <button id = "increase-font">+</button>
+      </div>
     </div>
     <div class="quote-section">
-        <p id="quote-text"></p>
-        <p id="quote-author">- Author</p>
+      <p id="quote-text"></p>
+      <p id="quote-author">- Author</p>
     </div>
     <div class="buttons">
-        <button id="previous-btn"> << Previous</button>
-        <button id="random-btn"> Random</button>
-        <button id="next-btn"> Next >> </button>
+      <button id="previous-btn">&#11207 Previous</button>
+      <button id="random-btn">Random</button>
+      <button id="next-btn">Next &#11208</button>
     </div>
-    
+</div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

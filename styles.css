@@ -2,19 +2,78 @@
     margin: 0;
     padding:0;
 }
+body{
+    background-color: #f1e8c7;
+    font-family: "Montserrat";
+    color: #444333;
+}
 nav{
-    background-color: rgb(90, 109, 56);
+    background-color: #8a925a;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 22px;
+    padding: 16px 3rem;
+    
+}
+
+nav h3{
+    font-family: "Special Elite";
+    font-size: xx-large;
+    font-weight:normal;
+   
+}
+
+.container{
+    padding: 1rem 3rem
+}
+
+.top-bar{
+    display: flex;
+    justify-content: space-between;
+}
+.font-size-control button{
+    
+    height: 2rem;
+    width: 2rem;
+
 }
 
 .quote-section{
-    border: 3px solid rgb(90, 109, 56);
+    border: 1px solid rgb(90, 109, 56);
+    border-radius: 10px;
     height: 12rem;
     width: 40rem;
     padding: 22px;
     margin: auto;
+    background-color: #fcf5dc;
+    font-family:"Special Elite";
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#quote-text{
+    font-size: larger;
+    margin-bottom: 4rem;
+}
+
+#quote-author::before{
+    content: "~";
+}
+
+.buttons{
+    display: flex;
+    justify-content:space-between;
+    margin-top: 2rem;
+}
+
+.buttons button{
+    padding: 8px 20px;
+    background-color: #8a925a;
+    border: 1px ;
+    border-radius: 2px;
+    box-shadow:6px 6px 5px #7e7b59;
+    color: white;
 }
