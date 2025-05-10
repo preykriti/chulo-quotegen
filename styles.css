@@ -11,8 +11,6 @@
     --textColor: #444333;
     --buttonHover: #a08447;
     --accentColor: #c17d4f;
-    /* --accentColor: #9d9bce; */
-    --white: #ffffff;
     --btnColor: #fcf5dc;
 }
 body{
@@ -23,13 +21,12 @@ body{
 .dark-mode{
     --navColor:  #5e664d;
     --bgColor:#2c2a22;
-    /* --shadowColor: #3d4c3a; */
-    --shadowColor: #5e664d;
-    --quoteSectionColor:  #3a382e;
+    --shadowColor: #4a5c46;
+    --quoteSectionColor:  #797770;
     --textColor:  #e0d8b8;
     --buttonHover: #7d6639;
-    --accentColor: #c17d4f;
-    /* --accentColor: #9d9bce; */
+    --accentColor: #c17d4a;
+
     --btnColor: #fcf5dc;
 }
 nav{
@@ -63,8 +60,8 @@ nav h3{
 
 .dark-mode-outer-border{
     position: relative;
-    border: 1px solid var(--white);
-    background-color: var(--white);
+    border: 1px solid white;
+    background-color: white;
     height: 19px;
     width: 39px;
     border-radius: 13px;
@@ -93,7 +90,7 @@ nav h3{
 
 .dark-mode-outer-border input:checked + .dark-mode-inner-circle{
     left: 20px;
-    background-color: var(--white);
+    background-color: white;
 }
 
 body.dark-mode .dark-mode-outer-border{
@@ -165,6 +162,7 @@ select{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 2rem 0;
     gap: 1rem;
     width: 100%;
 }
@@ -183,29 +181,57 @@ select{
 }
 
 .quote-display{
-    border: 3px solid var(--shadowColor);
-    border-radius: 6px;
-    border-style: dashed;
+    /* border: 3px dashed var(--shadowColor); */
+    border-radius: 2px;
     height: fit-content;
     min-height: 13rem;
     width: 100%;
     max-width: 40rem;
-    padding: 22px;
+    padding: 27px 22px;
     background-color: var(--quoteSectionColor);
     font-family:"Special Elite";
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    position: relative;
+    background-image: url("./assets/scrunched-paper3.png");
+    background-blend-mode: multiply;
+    box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
     font-size: 16px;
+    overflow: visible;
 }
+
+.tape {
+    position: absolute;
+    width: 130px; 
+    height: 40px; 
+    background-image: url("./assets/tape2.png");
+    opacity: 0.7;
+    background-size: cover;
+    transform: rotate(7deg);
+    z-index: 5;
+}
+
+.tape-top-right {
+    top: -22px;
+    right: 20px;
+}
+
+.tape-bottom-left {
+    bottom: -23px;
+    left: 20px;
+    transform: rotate(186deg);
+}
+
 
 #quote-text, #quote-author{ 
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 #quote-text{ 
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
 }
 #quote-author{
     font-size: 11px;
@@ -227,14 +253,14 @@ button{
     border: 1px solid var(--shadowColor);
     border-radius: 6px;
     box-shadow:4px 4px 0px var(--shadowColor);
-    color: var(--white);
+    color: white;
 }
 #random-btn:hover{
     box-shadow: 8px 10px 0px var(--shadowColor);
     transition: ease-in-out 0.2s;
 }
 
-* button:hover{
+button:hover{
     transform: translateY(-4px);
     box-shadow: 6px 7px 0px var(--shadowColor);
     transition: ease-in-out 0.2s;
@@ -275,8 +301,12 @@ button{
 
     .dark-mode-word::before {
         content: "";
-        background-image: url(./night-mode-moon.png);
-        /* content: "\263D"; */
+        background-image: url(./assets/night-mode.png);
+        background-size:contain;
+        background-repeat: no-repeat;
+        height: 18px;
+        width: 18px;
+        margin-right: 5px;
         display: inline-block;
         font-size: 16px;
     }
@@ -287,18 +317,20 @@ button{
     
     .quote-section {
         gap: 0.5rem;
-        margin-top: 3rem;
+        margin: 2.5rem 0rem;
+
     }
     
     .quote-section button {
         height: 25px;
         width: 25px;
         min-width: 25px;
+    
     }
     
     .quote-display {
-        padding: 15px;
-        min-height: 10rem;
+        padding: 20px 15px;
+        min-height: 15rem;
     }
     
     #quote-text {

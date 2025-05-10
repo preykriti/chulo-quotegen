@@ -13,27 +13,28 @@ const darkModeSwitch = document.getElementById("dark-mode-switch");
 
 let i = 0;
 let chosenQuotes = [];
-let chosenSize = 16;
+let chosenSize = 20;
 
 
 function changeFontSize(type) {
   chosenSize = type === "increment" ? chosenSize + 2 : chosenSize - 2;
   quoteText.style.fontSize = `${chosenSize}px`;
-  quoteAuthor.style.fontSize = `${chosenSize - 5}px`;
+  quoteAuthor.style.fontSize = `${chosenSize - 7}px`;
   displayFont.textContent = `${chosenSize}px`;
 }
 
 increaseFont.addEventListener("click", () => {
-  if (chosenSize < 52) {
+  if (chosenSize < 54) {
     changeFontSize("increment");
   }
 });
 
 decreaseFont.addEventListener("click", () => {
-  if (chosenSize > 16) {
+  if (chosenSize > 20) {
     changeFontSize("decrement");
   }
 });
+
 
 
 //for quotes
@@ -45,8 +46,17 @@ function updateQuotes() {
 
 function displayQuote() {
   const selectedQuote = chosenQuotes[i];
-  quoteText.textContent = selectedQuote.quote;
-  quoteAuthor.textContent = selectedQuote.author;
+  quoteText.style.opacity = 0;
+  quoteAuthor.style.opacity = 0;
+
+  setTimeout(() => {
+    quoteText.textContent = selectedQuote.quote;
+    quoteAuthor.textContent = selectedQuote.author;
+
+    quoteText.style.opacity = 1;
+    quoteAuthor.style.opacity = 1;
+    document.getElementById("category-icon").style.opacity = 1;
+  }, 300);
 }
 
 //to change according to category
