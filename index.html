@@ -15,10 +15,16 @@
   <body>
     <nav>
       <h3 class="logo">QUOTES</h3>
-      <div>Dark Mode</div>
+      <div class="dark-mode-container">
+        <span class="dark-mode-word">Dark Mode</span>
+        <div class="dark-mode-outer-border">
+            <input type="checkbox" id = "dark-mode-switch">
+            <div class="dark-mode-inner-circle"></div>
+        </div>
+    </div>
     </nav>
 
-    <div class="container">
+<div class="container">
     <div class="top-bar">
       <div class="categories">
         <h3>Categories</h3>
@@ -34,21 +40,21 @@
         <span id="font-size-display">16px</span>
         <button id = "increase-font">+</button>
       </div>
-
-
     </div>
+
+
     <section class="quote-section">
-        
-    <div class="quote-display">
-      <p id="quote-text"></p>
-      <p id="quote-author">Author</p>
-    </div>
-    </section>
-    <div class="buttons">
         <button id="previous-btn">&#11207 </button>
-      <button id="random-btn">Random</button>
-      <button id="next-btn"> &#11208</button>
-    </div>
+        <div class="quote-display">
+            <p id="quote-text"></p>
+            <p id="quote-author">Author</p>
+        </div>
+        <button id="next-btn"> &#11208</button>
+    </section>
+
+
+    <button id="random-btn">Random</button>
+
 </div>
     <script type="module" src="script.js"></script>
 

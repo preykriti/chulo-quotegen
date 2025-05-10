@@ -9,6 +9,7 @@ const category = document.getElementById("category");
 const increaseFont = document.getElementById("increase-font");
 const decreaseFont = document.getElementById("decrease-font");
 const displayFont = document.getElementById("font-size-display");
+const darkModeSwitch = document.getElementById("dark-mode-switch");
 
 let i = 0;
 let chosenQuotes = [];
@@ -48,6 +49,7 @@ function displayQuote() {
   quoteAuthor.textContent = selectedQuote.author;
 }
 
+//to change according to category
 category.addEventListener("change", updateQuotes);
 
 nextBtn.addEventListener("click", ()=>{
@@ -66,8 +68,16 @@ previousBtn.addEventListener("click", ()=>{
 
 randomBtn.addEventListener("click", ()=>{
   i = Math.floor(Math.random() * (chosenQuotes.length));
-  console.log("helo"+ i);
   displayQuote();
   }
 )
+
+
+//for dark mode
+darkModeSwitch.addEventListener("change", ()=>{
+  document.body.classList.toggle("dark-mode");
+
+})
+
+
 updateQuotes();
