@@ -87,7 +87,15 @@ randomBtn.addEventListener("click", ()=>{
 darkModeSwitch.addEventListener("change", ()=>{
   document.body.classList.toggle("dark-mode");
 
+  localStorage.setItem("darkMode", darkModeSwitch.checked);
+
 })
 
-
-updateQuotes();
+function initialize(){
+  updateQuotes();
+  if(localStorage.getItem("darkMode") === "true"){
+    darkModeSwitch.checked = true;
+    document.body.classList.add("dark-mode");
+  }
+}
+initialize();

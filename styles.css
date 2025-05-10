@@ -254,6 +254,7 @@ button{
     border-radius: 6px;
     box-shadow:4px 4px 0px var(--shadowColor);
     color: white;
+    margin-bottom: 13px;
 }
 #random-btn:hover{
     box-shadow: 8px 10px 0px var(--shadowColor);
